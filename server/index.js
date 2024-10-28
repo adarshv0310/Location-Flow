@@ -4,7 +4,7 @@ import colors from 'colors';
 import cors from 'cors';
 
 import mongoose from 'mongoose';
-
+import addressRouter from './routes/address.route.js'
 
 // dotenv config
 dotenv.config();
@@ -35,6 +35,24 @@ app.use(cors(corsOptions));
 app.use(express.json());
 //app.use(cookieParser());
 //app.use(bodyParser.json());
+
+
+
+// route connection
+app.use('/address', addressRouter);
+
+
+app.use((err, req, res, next) => {
+    const status = err.status || 500;
+    const message = err.message || "Something went wrong ";
+
+
+    return res.status(status).json({
+        success: false,
+        status,
+        message,
+    });
+});
 
 
 
