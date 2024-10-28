@@ -2,16 +2,23 @@ import express from 'express';
 import dotenv from 'dotenv';
 import colors from 'colors';
 import cors from 'cors';
-import {
-    connectDB
-} from './config/db.js';
+
+import mongoose from 'mongoose';
 
 
 // dotenv config
 dotenv.config();
 
 // mongodb connection
-connectDB();
+
+const URI = process.env.MONGO_URL;
+mongoose.connect(URI)
+    .then(() => console.log('Mongodb connected'))
+    .catch((err) => console.log("Mongodb error : ", err));
+
+
+
+
 
 
 // rest object 
@@ -33,7 +40,7 @@ app.use(bodyParser.json());
 
 // port 
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8001;
 
 
 app.listen(port, () => {
@@ -41,4 +48,4 @@ app.listen(port, () => {
         `Server Running in ${process.env.NODE_MODE} Mode on port ${process.env.PORT}`
         .bgCyan.white
     );
-})
+});
