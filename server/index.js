@@ -13,8 +13,8 @@ dotenv.config();
 
 const URI = process.env.MONGO_URL;
 mongoose.connect(URI)
-    .then(() => console.log('Mongodb connected'))
-    .catch((err) => console.log("Mongodb error : ", err));
+    .then(() => console.log('Mongodb connected'.bgGreen.white))
+    .catch((err) => console.log(`Mongodb error : ${err}`.bgRed.white));
 
 
 
@@ -33,8 +33,8 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json());
-app.use(cookieParser());
-app.use(bodyParser.json());
+//app.use(cookieParser());
+//app.use(bodyParser.json());
 
 
 
