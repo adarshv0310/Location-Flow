@@ -1,0 +1,14 @@
+{
+  "name": "location-flow",
+  "version": "1.0.0",
+  "description": "A backend for Location flow",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  }
+}
