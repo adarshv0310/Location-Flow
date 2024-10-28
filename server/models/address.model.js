@@ -11,18 +11,21 @@ const AddressSchema = new mongoose.Schema({
     },
     category: {
         type: String,
+        required: [true, 'Category is required'],
+        enum: ['house', 'friends & family ', 'office'],
+        default: 'home',
     },
     coordinates: {
         lat: {
             type: Number,
-            required: [true, "Latitude is required"],
+
         },
         lng: {
             type: Number,
-            required: [true, "Longitude is required"],
+
         }
     },
-});
+}, { timestamps: true });
 
 // Create the Address model from the schema
 const Address = mongoose.model('Address', AddressSchema);

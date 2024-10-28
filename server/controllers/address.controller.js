@@ -2,12 +2,10 @@ import Address from "../models/address.model.js";
 import { errorhandler } from "../utils/error.js";
 
 
-export const createaddress = async() => {
+export const createaddress = async(req, res, next) => {
 
     const { houseno, area, category } = req.body;
-    if (!houseno || !area || !category) {
-        return next(errorhandler(404, 'All the fields are neccessary'));
-    }
+
     try {
 
         const newaddress = new Address({ houseno, area, category });
@@ -23,4 +21,4 @@ export const createaddress = async() => {
         console.error('Error  creating address:', error);
         return next(errorhandler(500, 'Internal Server Error'));
     }
-}
+};
