@@ -5,7 +5,7 @@ import { LocationContext } from '../context/LocationContext';
 import AddressForm from '../components/AddressForm';
 function Home() {
    const {location , setLocation}=useContext(LocationContext);
-  const [showModal , setShowModal] = useState(false);
+  const [showModal , setShowModal] = useState(true);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
