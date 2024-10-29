@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {GoogleMap , LoadScript , Autocomplete , Marker} from '@react-google-maps/api';
 
 function Mapcomponent({onLocationSelected}) {
