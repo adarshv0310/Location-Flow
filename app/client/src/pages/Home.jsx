@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Locationpermission from '../components/Locationpermission'
 function Home() {
   return (
     <div>
-      Adarsh
+      <Locationpermission/>
     </div>
   )
 }
