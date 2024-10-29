@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import Locationpermission from '../components/Locationpermission'
+import React, { useState } from 'react';
+import Locationpermission from '../components/Locationpermission';
+import Mapcomponent from '../components/Mapcomponent';
 function Home() {
-
+   
   const [showModal , setshowModal] = useState(true);
   return (
     <div>
