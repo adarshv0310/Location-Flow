@@ -4,7 +4,7 @@ import Mapcomponent from '../components/Mapcomponent';
 import { LocationContext } from '../context/LocationContext';
 import AddressForm from '../components/AddressForm';
 function Home() {
-   const [location , setLocation]=useContext(LocationContext);
+   const {location , setLocation}=useContext(LocationContext);
   const [showModal , setShowModal] = useState(false);
 
   useEffect(() => {
