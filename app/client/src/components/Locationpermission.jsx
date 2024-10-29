@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Locationpermission() {
+function Locationpermission({ onEnableLocation, onManualSearch }) {
   return (
     <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center px-4 sm:px-0">
       <div className="bg-white rounded-lg p-6 sm:p-8 w-full max-w-md text-center shadow-lg">
